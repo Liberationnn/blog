@@ -4,23 +4,23 @@
  * Module dependencies.
  */
 
-var app = require('../app'); //引入app模块
-var debug = require('debug')('blog:server'); //调试模块
-var http = require('http'); //创建http服务器模块
+let app = require('../app'); //引入app模块
+let debug = require('debug')('blog:server'); //调试模块
+let http = require('http'); //创建http服务器模块
 
 /**
  * Get port from environment and store in Express.
  * 从环境变量中取端口并保存到express中
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+let port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+let server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -35,7 +35,7 @@ server.on('listening', onListening); //当服务器成功监听端口时调用
  */
 
 function normalizePort(val) {
-  var port = parseInt(val, 10);
+  let port = parseInt(val, 10);
 
   if (isNaN(port)) {
     // named pipe
@@ -59,7 +59,7 @@ function onError(error) {
     throw error;
   }
 
-  var bind = typeof port === 'string'
+  let bind = typeof port === 'string'
     ? 'Pipe ' + port
     : 'Port ' + port;
 
@@ -83,8 +83,8 @@ function onError(error) {
  */
 
 function onListening() {
-  var addr = server.address();
-  var bind = typeof addr === 'string'
+  let addr = server.address();
+  let bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
