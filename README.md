@@ -9,3 +9,12 @@
 
 #设置环境变量并启动服务
 > SET DEBUG=blog:* & npm start
+
+#安装bower
+> npm install bower -g
+
+#初始化bower
+> bower init
+
+#安装bootstrap
+> bower install bootstrap@3 -S
