@@ -21,7 +21,7 @@ app.use(cookieParser()); //处理cookie 把请求头中的cookie转成对象，�
 app.use(express.static(path.join(__dirname, 'public'))); //静态文件服务
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/user', usersRouter);
 app.use('/article', articleRouter);
 
 // catch 404 and forward to error handler
