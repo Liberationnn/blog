@@ -4,12 +4,13 @@
  * Module dependencies.
  */
 
-var app = require('../app');
-var debug = require('debug')('blog:server');
-var http = require('http');
+var app = require('../app'); //引入app模块
+var debug = require('debug')('blog:server'); //调试模块
+var http = require('http'); //创建http服务器模块
 
 /**
  * Get port from environment and store in Express.
+ * 从环境变量中取端口并保存到express中
  */
 
 var port = normalizePort(process.env.PORT || '3000');
@@ -26,8 +27,8 @@ var server = http.createServer(app);
  */
 
 server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+server.on('error', onError); //当服务器启动出错时调用
+server.on('listening', onListening); //当服务器成功监听端口时调用
 
 /**
  * Normalize a port into a number, string, or false.

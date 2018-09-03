@@ -1,4 +1,5 @@
 var express = require('express');
+// 返回一个路由的实例
 var router = express.Router();
 
 /* GET users listing. */
