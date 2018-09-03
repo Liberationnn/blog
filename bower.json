@@ -1,0 +1,24 @@
+{
+  "name": "blog",
+  "description": "",
+  "main": "",
+  "authors": [
+    "SR <183428323@qq.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "blog"
+  ],
+  "homepage": "https://github.com/Liberationnn/blog",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "3"
+  }
+}
