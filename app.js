@@ -5,7 +5,7 @@ let cookieParser = require('cookie-parser'); //处理cookie
 let logger = require('morgan'); //处理日志
 
 let indexRouter = require('./routes/index'); //根路由
-let usersRouter = require('./routes/users'); //用户路由
+let usersRouter = require('./routes/user'); //用户路由
 let articleRouter = require('./routes/article'); //文章路由
 
 let app = express();

@@ -3,10 +3,10 @@ let express = require('express');
 let router = express.Router();
 
 // 注册
-router.get('/reg', function (req, res, next) {
-  res.render('user/reg', {title: '注册'});
+router.get('/register', function (req, res, next) {
+  res.render('user/register', {title: '注册'});
 });
-router.post('/reg', function (req, res, next) {
+router.post('/register', function (req, res, next) {
   res.redirect('/');
 });
 
