@@ -1,6 +1,6 @@
-let mongoose = require('./db/index');
+let mongoose = require('./mongoose');
 
-let util = {
+let utils = {
   // md5加密
   md5: function (str) {
     return require('crypto').createHash('md5').update(str).digest('hex');
@@ -13,4 +13,4 @@ let util = {
   }
 };
 
-module.exports = util;
+module.exports = utils;

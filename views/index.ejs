@@ -1,3 +1,15 @@
 <%- include include/header.ejs %>
-欢迎光临我的<%= title %>
+<% articles.forEach((article) => { %>
+<div class="media">
+  <div class="media-left media-middle">
+    <a href="#">
+      <img class="media-object" src="<%= article.user.avatar %>" alt="">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><%= article.title %></h4>
+    <p><%= article.content %></p>
+  </div>
+</div>
+<%}); %>
 <%- include include/footer.ejs %>
