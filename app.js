@@ -3,6 +3,8 @@ let express = require('express');
 let path = require('path'); //处理路径
 let cookieParser = require('cookie-parser'); //处理cookie
 let logger = require('morgan'); //处理日志
+let session = require('express-session');
+let MongoStore = require('connect-mongo')(session);
 
 let indexRouter = require('./routes/index'); //根路由
 let usersRouter = require('./routes/user'); //用户路由
@@ -18,7 +20,26 @@ app.use(logger('dev')); //指定路径输出的格式
 app.use(express.json()); //处理JSON 通过Content-Type来判断是否由自己来处理
 app.use(express.urlencoded({extended: false})); //处理form-urlencoded
 app.use(cookieParser()); //处理cookie 把请求头中的cookie转成对象，加入一个cookie函数的属性
+
+let settings = require('./settings');
+app.use(session({
+  secret: 'message',
+  resave: true,
+  saveUninitialized: true,
+  store: new MongoStore({
+    url: settings.dbUrl
+  })
+}));
+
 app.use(express.static(path.join(__dirname, 'public'))); //静态文件服务
+app.use((req, res, next) => { //把属性添加到插入到ejs的对象中
+  res.locals.user = req.session.user;
+  res.locals.success = req.session.success || '';
+  res.locals.error = req.session.error || '';
+  req.session.success = '';
+  req.session.error = '';
+  next();
+});
 
 app.use('/', indexRouter);
 app.use('/user', usersRouter);

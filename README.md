@@ -18,3 +18,10 @@
 
 #安装bootstrap
 > bower install bootstrap@3 -S
+
+#安装数据库
+> npm install mongoose -S
+
+#安装会话中间件
+> npm install express-session connect-mongo -S
+
