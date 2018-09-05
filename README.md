@@ -25,3 +25,6 @@
 #安装会话中间件
 > npm install express-session connect-mongo -S
 
+#安装文件上传模块
+> npm install multer -S
+

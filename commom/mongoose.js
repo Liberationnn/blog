@@ -24,9 +24,10 @@ createModel('user', {
 
 // 创建article的模板
 createModel('article', {
+  user: {type: mongoose.Schema.Types.ObjectId, ref: 'user'},
   title: {type: String, required: true},
   content: {type: String, required: true},
-  user: {type: mongoose.Schema.Types.ObjectId, ref: 'user'},
+  img: {type: String},
   createAt: {type: Date, default: Date.now()}
 });
 

@@ -5,9 +5,7 @@ let mongoose = require('../commom/mongoose');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  mongoose.model('article').find({}).populate('user').exec((err, docs) => {
-    res.render('index', {articles: docs});
-  });
+  res.redirect('/article/list/1/3');
 });
 
 module.exports = router;

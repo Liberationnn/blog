@@ -37,6 +37,7 @@ app.use(express.static(path.join(__dirname, 'public'))); //静态文件服务
 // 插入属性到ejs的对象中
 app.use((req, res, next) => {
   res.locals.user = req.session.user;
+  res.locals.keyword = req.session.keyword;
   res.locals.success = req.session.success || '';
   res.locals.error = req.session.error || '';
 
